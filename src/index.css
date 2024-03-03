@@ -1,13 +1,231 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,600&display=swap");
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+body {
+  background-color: #fff;
+  color: #222;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+.wrapper {
+  width: 1200px;
+  margin: 50px auto;
+}
+header .logo {
+  font-weight: 600;
+  font-size: 20px;
+}
+header .presentation {
+  background: url("https://complaneta.ru/wp-content/uploads/2021/08/3b3a6809541470b56565ef3e4002ef6591b6dded58ea89f16d5fa1b4e38a.jpeg ")
+    no-repeat;
+  margin: 50px auto;
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply;
+  background-color: #bcbcbc;
+  position: relative;
+}
+header .presentation::after {
+  content: "Лучшие гаджеты для ежедневного использования";
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  width: 300px;
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+}
+header .presentation::before {
+  content: "по низким ценам";
+  position: absolute;
+  top: 300px;
+  left: 50px;
+  width: 300px;
+  font-size: 20px;
+  font-weight: 300;
+  color: #fff;
+}
+footer {
+  text-align: center;
+  margin-top: 100px;
+}
+header ul.nav {
+  float: right;
+  list-style: none;
+}
+header ul.nav li {
+  display: inline;
+  margin-left: 25px;
+  cursor: pointer;
+  transition: 500ms ease;
+}
+header ul.nav li:hover {
+  opacity: 0.5;
+}
+header .shop-card-button {
+  float: right;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: color, transform 500ms ease;
+}
+header .shop-card-button:hover,
+header .shop-card-button.active {
+  transform: scale(1.3);
+}
+header {
+  position: relative;
+}
+header .shop-cart {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 450px;
+  min-height: 100px;
+  background: #fafafa;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  z-index: 1000;
+  padding: 20px;
+  padding-bottom: 0;
+}
+header .shop-cart .empty h2 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+header .shop-cart .item {
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+}
+header .shop-cart .item img {
+  width: 120px;
+  height: 120px;
+  float: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+header .shop-cart .item h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+header .shop-cart .item p {
+  color: #797979;
+  font-weight: 600;
+}
+header .shop-cart .item box-icon {
+  float: right;
+  position: relative;
+  top: -25px;
+  cursor: pointer;
+  transition: transform 500ms ease;
+}
+header .shop-cart .item box-icon:hover {
+  transform: scale(1.2);
+}
+header .shop-cart .summa {
+  float: right;
+  width: 100%;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+main .item {
+  background: #f5f5f5;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+}
+.item img {
+  width: 100%;
+  height: 250px;
+  border-radius: 20px 20px 0 0;
+  transition: transform 500ms ease;
+  cursor: pointer;
+}
+.full-item img {
+  width: 400px;
+  height: 400px;
+  border-radius: 20px 20px 0 0;
+  transition: transform 500ms ease;
+  cursor: pointer;
+}
+.item img:hover,
+.full-item img:hover {
+  transform: scale(1.05);
+}
+.categories div {
+  display: inline-block;
+  background: #f2f2f2;
+  border-radius: 50px;
+  padding: 10px;
+  margin-bottom: 25px;
+  margin-right: 35px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 500ms ease;
+  font-size: 20px;
+}
+.categories div:hover {
+  border-color: silver;
+  transform: scale(1.1);
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  gap: 30px;
+}
+main h2,
+main p,
+main b {
+  margin: 10px 20px;
+  color: #333;
+}
+main b,
+.full-item b {
+  color: #5fa36a;
+  position: relative;
+}
+.add-to-card {
+  position: absolute;
+  right: 20px;
+  bottom: 155px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 35;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.full-item div .add-to-card {
+  display: none;
+}
+.full-item {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000000be;
+  z-index: 9999;
+  overflow: auto;
+}
+.full-item > div {
+  width: 400px;
+  position: relative;
+  margin: 3% auto;
+  padding: 40px 30px;
+  background: #fff;
+  border-radius: 10px;
 }
